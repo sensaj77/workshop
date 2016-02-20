@@ -4,6 +4,7 @@ export default class TableHead extends React.Component {
 
 
   render() {
+    /*console.log(this.props.todos);*/
 
   	let tableHead = [
   		["cena", "nazwa", "opis"]

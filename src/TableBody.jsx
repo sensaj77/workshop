@@ -4,8 +4,8 @@ export default class TableBody extends React.Component {
 
 
   render() {
-
-
+    /*console.log(this.props.todos);*/
+    
   	let tableRows = [
   		
   		["product1", "product2", "product3"],
@@ -30,7 +30,8 @@ export default class TableBody extends React.Component {
 
     return (
     	<tbody>
-      		{tableBodyJSX}
+      		
+          {tableBodyJSX}
       	</tbody>
     );
   }
