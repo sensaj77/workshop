@@ -2,6 +2,10 @@ import React from "react";
 import TableBody from "./TableBody.jsx";
 import TableHeader from "./TableHeader.jsx";
 
+
+
+
+
 export default class App extends React.Component {
 
  
@@ -10,16 +14,7 @@ export default class App extends React.Component {
     super(props);
 
     this.state = {
-     /* products : this.props.costam,
-      filteredProducts:  this.props.filteredProducts*/
-    }
-
-  }
-  handleChange(e) {
-    console.log(e.target.name, e.target.value);
-  }
-  render() {
-    const items = [
+      products : [
       {
         id: 1,
         nazwa: "product1",
@@ -39,14 +34,22 @@ export default class App extends React.Component {
         opis: "telefon"
       }
 
-    ];
+    ]
+     /* filteredProducts:  this.props.filteredProducts*/
+    }
 
 
+  }
+  
+
+
+  render() {
+    
    
     return (
     	<div>
       		<TableHeader  />
-      		<TableBody items={items} handleChange={this.handleChange} />
+      		<TableBody products={this.state.products} />
          
 
       	</div>
