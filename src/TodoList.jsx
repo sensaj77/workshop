@@ -2,7 +2,7 @@ import React from "react";
 
 class TodoList extends React.Component {
   render() {
-
+    
     // Dodajmy listę todosów
     
     let todoListElement = this.props.todos.map( (todo, index) => <li key={ index }>{ todo }</li>);
