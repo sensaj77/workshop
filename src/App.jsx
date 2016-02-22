@@ -23,13 +23,13 @@ export default class App extends React.Component {
       },
        {
         id: 2,
-        nazwa: "product2",
+        nazwa: "LG",
         cena: "55zł",
         opis: "telewizor"
       },
        {
         id: 3,
-        nazwa: "product3",
+        nazwa: "samsung",
         cena: "555zł",
         opis: "telefon"
       }
