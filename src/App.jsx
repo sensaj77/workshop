@@ -19,19 +19,22 @@ export default class App extends React.Component {
         id: 1,
         nazwa: "product1",
         cena: "5zł",
-        opis: "odkurzacz"
+        opis: "odkurzacz",
+        mappingClass: "class-one"
       },
        {
         id: 2,
         nazwa: "LG",
         cena: "55zł",
-        opis: "telewizor"
+        opis: "telewizor",
+        mappingClass: "class-two"
       },
        {
         id: 3,
         nazwa: "samsung",
         cena: "555zł",
-        opis: "telefon"
+        opis: "telefon",
+        mappingClass: "class-three"
       }
 
     ]

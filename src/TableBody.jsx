@@ -59,7 +59,8 @@ handleChange(event) {
 
   sortByName(event){
     console.log("sortedByName called");
-
+    let nameColumnInnerHtml = event.target.innerHTML;
+    console.log(nameColumnInnerHtml);
     this.setState({
       /*sortedByNameProducts: nameSorted*/
     })
@@ -89,7 +90,7 @@ wyświetlać/uzywac/ działać na właśnościach */
   render() {
 
     var myTable = this.state.currentProducts.map( item => 
-              <tr key={item.id}>
+              <tr key={item.id} className={item.mappingClass}>
                 <td>{item.nazwa}</td>
                 <td>{item.cena}</td>
                 <td>{item.opis}</td>
