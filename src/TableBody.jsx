@@ -43,13 +43,13 @@ handleChange(event) {
       let itemDesciption = item.opis;
       let itemPrice = item.cena;
 
-       if( itemName.indexOf(event.target.innerHTML) !== -1) {
+       if( itemName.indexOf(event.target.value) !== -1) {
           tempTable.push(item);
-       } if ( itemDesciption.indexOf(event.target.innerHTML) !== -1 ) {
+       } /*if ( itemDesciption.indexOf(event.target.value) !== -1 ) {
         tempTable.push(item);
-       } if ( itemPrice.indexOf(event.target.innerHTML) !== -1 ) {
+       } if ( itemPrice.indexOf(event.target.value) !== -1 ) {
         tempTable.push(item);
-       }
+       }*/
     })
 
     this.setState({
@@ -100,7 +100,9 @@ wyświetlać/uzywac/ działać na właśnościach */
    
     return (
       <div>
+      
     	<table className="table table-hover">
+
         <thead>
           <tr>
           <td onClick={::this.sortByName}>nazwa</td>
@@ -108,7 +110,7 @@ wyświetlać/uzywac/ działać na właśnościach */
           <td onClick={::this.sortByDescription}>opis</td>
           </tr>
         </thead>
-        <tbody onClick={::this.handleChange}>
+        <tbody >
             {myTable}
         </tbody>
       <tfoot>
@@ -116,7 +118,7 @@ wyświetlać/uzywac/ działać na właśnościach */
       </table>
       <form className="table-form"  >
           { /* // 1. Do przechwytywania zmian w input przyda się onChange. */ }
-          <input type="text" name="filter"  />
+          <input type="text" name="filter" onChange={::this.handleChange} />
           <input type="submit" />
         </form>
       </div>
@@ -145,3 +147,74 @@ wyświetlać/uzywac/ działać na właśnościach */
           </tr>
         )
     })*/
+
+
+
+//Do onSubmit filter for now
+
+/*
+ToDOForm.jsx
+
+class TodoForm extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+
+  //4/ 2. I zatrzymajmy domyślną akcję
+  handleSubmit(e) {
+    e.preventDefault();
+    console.log(this.state);
+  }
+
+  handleChange({ target }) {
+    this.setState({ [target.name]: target.value });
+  }
+
+  render() {
+    return (
+      <div className="todo-form">
+        { }
+        <form onSubmit={ ::this.handleSubmit }>
+          <input type="text" name="todo" onChange={ ::this.handleChange } />
+          <input type="submit" />
+        </form>
+      </div>
+    );
+  }
+}*/
+
+/*
+Parent - App.jsx
+
+
+import React from "react";
+import TodoForm from "./TodoForm";
+import TodoList from "./TodoList";
+
+class App extends React.Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      todos: [],
+    };
+  }
+
+  //3/ 2. Chcemy dostać nową tablicę, więc unikamy .push()
+  newTodo(todo) {
+    this.setState({ todos: [...this.state.todos, todo] });
+  }
+
+  render() {
+    return (
+      <div className="app">
+        {  // 1. Do komponentu możemy przekazać też funkcję  }
+        <TodoForm newTodo={ ::this.newTodo } />
+        <TodoList todos={ this.state.todos } />
+      </div>
+    );
+  }
+}
+
+export default App;
+*/
